@@ -100,6 +100,21 @@ So for example suppose you bought www.google.com and you have made a beautifull 
 
  13. Now Technitium/your DNS server forwards `www` to `google.com` and then redirects `google.com` to your ip, meaning people see your website :)
  
+ 21. Then just ensure the following settings are in, where I replaced `google.com` with `hiveminds.eu`, as though I own the domain `hiveminds.eu` In short your put these settings in your technitium settings panel, (replace the `your ip` with the public ip adress of your computer/host/the device you host your website on. (The `A` `ns1.<yourwebsite>` `<your public ip adress> is a glue record that tells the computer that links people to your website , hey when you are looking for this hostname/website, you can look at this ip to find the hostname/website, (But then it would get in an infinte loop so you tell it ok stop here, you found the website at this ip.)
+
+![1](./ExamplePictures/Final_dns_settings.png)
+
+ 22. Also, in the Technitium settings, click `Settings` tab. And fill in your personal ipv4 adress, in this example I assumed `202.202.12`, in at `DNS Server Local Addresses`. 
+
+![1](./ExamplePictures/21.png)
+
+ 23. Then go the bottom of the settings page/tab and click:`save settings`. (I also clicked `flush cache` but haven't tested whether it is required.) 
+
+![1](./ExamplePictures/22.png)
+
+24. Then close the `DnsServerApp.exe` and restart it.
+
+## Verified settings to host your own dns server:
  You can now verify you indeed redirect `www.google.com` to your computer, to do so: 
  
  14. Get the public ip adress of your computer, (for this example I'll use 202.202.12).
@@ -115,10 +130,6 @@ So for example suppose you bought www.google.com and you have made a beautifull 
  
 ![1](./ExamplePictures/20.png)
 
-## Verified settings to host your own dns server:
- 21. In short your put these settings in your technitium settings panel, (replace the `your ip` with the public ip adress of your computer/host/the device you host your website on. (The `A` `ns1.<yourwebsite>` `<your public ip adress> is a glue record that tells the computer that links people to your website , hey when you are looking for this hostname/website, you can look at this ip to find the hostname/website, (But then it would get in an infinte loop so you tell it ok stop here, you found the website at this ip.)
-
-![1](./ExamplePictures/Final_dns_settings.png)
 
  22. Then create the custom dns record in your domain registrar, this is done different for every domain seller. This is the example for namecheap. In short you want to type your your dns server hostname (if you put `ns1.<yourwebsite adres>` in the technitium enter that, together with the public ip adress of your computer. 
 
