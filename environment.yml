@@ -1,0 +1,23 @@
+# run: conda env create --file environment.yml
+# run: conda env create python=3.6 --file environment.yml
+# include new packages: conda env update --file environment.yml
+name: technitium_dns_configuration
+channels:
+  - conda-forge
+  - conda
+dependencies:
+- python=3.6
+- anaconda
+- conda:
+  - numpy>=1.19
+  - pytest>=3.0,<3.8
+  - pytest-cov
+  - selenium
+- pip
+- pip:
+  # works for regular pip packages
+  - pyment
+  - pdoc3
+  - pyhamcrest
+  - black
+  - codecov
