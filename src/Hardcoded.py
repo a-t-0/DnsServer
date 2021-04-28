@@ -4,6 +4,9 @@ class Hardcoded:
     def __init__(self, pwd):
         """Initialise parameters that are used in configuration."""
         self.script_dir = 5
-        self.port_nr = 5380
+        self.port = 5380
         self.username = "admin"
         self.pwd = pwd
+
+        # set DNS resource record type:
+        self.zone_type = "A"

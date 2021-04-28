@@ -1,5 +1,7 @@
 import numpy as np
+import requests
 from .Hardcoded import Hardcoded
+
 
 def get_json(url):
     # import urllib library
