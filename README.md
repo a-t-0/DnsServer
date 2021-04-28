@@ -87,7 +87,7 @@ So for example suppose you bought www.google.com and you have made a beautifull 
  6. Then click on "Add record", 
 	![1](./ExamplePictures/6.png)
  7. select Type:`A` and at the IP adress type the PUBLIC IP address of your pc. (The PUBLIC IP adress is what you see when you visit: www.whatsmyip.org, e.g. 202.202.12)
-	![1](./ExamplePictures/6.png)
+	![1](./ExamplePictures/7.png)
  8. Now you're already done, but it only works if people visit google.com and not `www.google.com`. So:
  9. Again, click "Add record"
  
