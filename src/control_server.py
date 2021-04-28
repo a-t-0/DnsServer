@@ -81,7 +81,7 @@ def add_record_to_zone_for_www(domain_name, hc, server):
     """Adds a record to a  domain in the "zone" tab.. Basically sets some properties of the domain for Technitium."""
     # http://localhost:5380/api/addRecord?token=x&domain=example.com
     # http://localhost:5380/api/addRecord?token=x&domain=example.com&type=A&value=<your_local_ipv4_adress>
-    #url = f"http://127.0.0.1:{hc.port}/api/addRecord?token={hc.token}&domain={hc.www_name}&type={hc.www_zone_type}&value={domain_name}"
+    # url = f"http://127.0.0.1:{hc.port}/api/addRecord?token={hc.token}&domain={hc.www_name}&type={hc.www_zone_type}&value={domain_name}"
     url = f"http://127.0.0.1:{hc.port}/api/addRecord?token={hc.token}&domain={hc.www_name}.{domain_name}&type={hc.www_zone_type}&value={domain_name}"
     response = get_json(url)
     if response["status"] == "ok":

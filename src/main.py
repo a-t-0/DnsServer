@@ -16,13 +16,14 @@ def main():
     hc = Hardcoded("temp")
     get_pwd(hc)
     get_token(hc)
-    server = Server(hc.token)
+    website = get_website()
+    server = Server(hc.token, website)
 
     # step 4 of readme (add a domain to tab "zone")
-    add_domain_to_zones("hiveminds.eu", hc)
+    add_domain_to_zones(server.website, hc)
     # step 6 of readme
-    add_record_to_zone("hiveminds.eu", hc, server)
-    add_record_to_zone_for_www("hiveminds.eu", hc, server)
+    add_record_to_zone(server.website, hc, server)
+    add_record_to_zone_for_www(server.website, hc, server)
 
 
 def get_pwd(hc):
@@ -42,7 +43,9 @@ def get_token(hc):
         )
 
 
-# TODO: call logout
+def get_website():
+    question = f"Please enter your website name, (without the www.) so someting like:mywebsite.io\n"
+    return ask_question(question)
 
 
 def add_two(x):
