@@ -10,3 +10,9 @@ class Hardcoded:
 
         # set DNS resource record type:
         self.zone_type = "A"
+        self.www_zone_type = "CNAME"
+        self.www_name = "www"
+
+        # set Technitium DNS API properties
+        self.add_zone_keyword = "createZone"
+        self.delete_zone_keyword = "deleteZone"

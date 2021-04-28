@@ -10,7 +10,9 @@
 curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
 ```
 ### Ubuntu configuration instructions
-There is an API that allows configuring technitium and it is documented here:https://github.com/TechnitiumSoftware/DnsServer/blob/master/APIDOCS.md this will be used  to add a zone:
+There is an API that allows configuring technitium and it is documented here:
+https://github.com/TechnitiumSoftware/DnsServer/blob/master/APIDOCS.md 
+this will be used  to add a zone:
 First get the login token:
 
 

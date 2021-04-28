@@ -245,3 +245,7 @@ ModelManifest.xml
 .fake/
 
 Other/
+
+# Python
+*pycache*
+.pytest_cache

@@ -1,8 +1,9 @@
 import numpy as np
 from getpass import getpass
 from .get_json import get_json
+from .control_server import add_domain_to_zones
 from .control_server import add_record_to_zone
-from .control_server import create_zone
+from .control_server import add_record_to_zone_for_www
 from .helper import ask_question
 from .Hardcoded import Hardcoded
 from .Server import Server
@@ -18,9 +19,10 @@ def main():
     server = Server(hc.token)
 
     # step 4 of readme (add a domain to tab "zone")
-    create_zone("hiveminds.eu", hc)
-    # step 5 of readme
+    add_domain_to_zones("hiveminds.eu", hc)
+    # step 6 of readme
     add_record_to_zone("hiveminds.eu", hc, server)
+    add_record_to_zone_for_www("hiveminds.eu", hc, server)
 
 
 def get_pwd(hc):
