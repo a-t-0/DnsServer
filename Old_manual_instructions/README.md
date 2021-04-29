@@ -60,7 +60,7 @@ So for example **suppose you bought www.google.com and you have made a beautiful
  21. Then just ensure the following settings are in, where I replaced `google.com` with `hiveminds.eu`, as though I own the domain `hiveminds.eu` In short your put these settings in your technitium settings panel, (replace the `your ip` with the public ip adress of your computer/host/the device you host your website on. (The `A` `ns1.<yourwebsite>` `<your public ip adress> is a glue record that tells the computer that links people to your website , hey when you are looking for this hostname/website, you can look at this ip to find the hostname/website, (But then it would get in an infinte loop so you tell it ok stop here, you found the website at this ip.)
 
 ![1](./Final_dns_settings.png)
-
+**IMPORTANT NOTE** at the type `A` record with Name starting with `ns1.` and `ns1.` Technitium appears to append the `.hiveminds.eu` already in the `add record` menu, however, it seems like the full `ns1.hiveminds.eu` is needed for the nslookup command to return the ip adress successfully, but no consistent results have been found yet. **Also**, at `Settings>DNS Server Local End Points` the software appends port 53, which seems to yield invalid results.
  22. Also, in the Technitium settings, click `Settings` tab. And fill in your personal ipv4 adress, in this example I assumed `202.202.12`, in at `DNS Server Local Addresses`. 
 
 ![1](./21.png)
