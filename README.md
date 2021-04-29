@@ -15,6 +15,19 @@ python -m src
 ```
 That's it, the code will now ask you to create a password for your Technitium DNS server, what your domain is and automatically configure your dns server.
 
+### starting and stopping technitium DNS
+Source: https://blog.technitium.com/2017/11/running-dns-server-on-ubuntu-linux.html
+To start the DNS server, one can first stop it with:
+```
+sudo systemctl stop dns.service
+```
+The start it again with:
+```
+cd /etc/dns/
+sudo ./start.sh
+```
+Pay attention to the port that is printed in the terminal, for me it changed from `5380` to `5379` after reboot.
+
 ## How to add your DNS server to your domain registrar
 This depends on where you rent your domain. An example for namecheap is attached below:
 0. Goto (substitute <your domain>)
