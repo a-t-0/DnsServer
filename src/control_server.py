@@ -77,6 +77,30 @@ def add_record_to_zone(domain_name, hc, server):
         )
 
 
+def add_record_to_zone_for_name_server(domain_name, hc, value):
+    """Adds a record to a  domain in the "zone" tab.. Basically sets some properties of the domain for Technitium."""
+    url = f"http://127.0.0.1:{hc.port}/api/addRecord?token={hc.token}&domain={domain_name}&type={hc.ns_zone_type}&value={value}"
+    response = get_json(url)
+    if response["status"] == "ok":
+        print(f"domain_name={domain_name} added succesfully!")
+    else:
+        raise Exception(
+            f"The domain was not added to the zone correctly. The servers response was:{response}"
+        )
+
+
+def add_glue_record(dns, hc, server):
+    """Adds a record to a  domain in the "zone" tab.. Basically sets some properties of the domain for Technitium."""
+    url = f"http://127.0.0.1:{hc.port}/api/addRecord?token={hc.token}&domain={dns}&type={hc.zone_type}&value={server.your_public_ipv4_address}"
+    response = get_json(url)
+    if response["status"] == "ok":
+        print(f"dns={dns} added succesfully!")
+    else:
+        raise Exception(
+            f"The domain was not added to the zone correctly. The servers response was:{response}"
+        )
+
+
 def add_record_to_zone_for_www(domain_name, hc, server):
     """Adds a record to a  domain in the "zone" tab.. Basically sets some properties of the domain for Technitium."""
     # http://localhost:5380/api/addRecord?token=x&domain=example.com

@@ -4,6 +4,8 @@ from .get_json import get_json
 from .control_server import add_domain_to_zones
 from .control_server import add_record_to_zone
 from .control_server import add_record_to_zone_for_www
+from .control_server import add_record_to_zone_for_name_server
+from .control_server import add_glue_record
 from .helper import ask_question
 from .Hardcoded import Hardcoded
 from .Server import Server
@@ -24,6 +26,18 @@ def main():
     # step 6 of readme
     add_record_to_zone(server.website, hc, server)
     add_record_to_zone_for_www(server.website, hc, server)
+
+    # add name server name:@, Type:NS, TTL 3600, Data ns2.hiveminds.eu
+    add_record_to_zone_for_name_server(server.website, hc, f"ns2.{website}")
+
+    # add name server name:@, Type:NS, TTL 14400, Data ns1.hiveminds.eu
+    add_record_to_zone_for_name_server(server.website, hc, f"ns1.{website}")
+
+    # add name server: name:ns1.hiveminds.eu, type:a,TTL: 3600, Data: IP4
+    add_glue_record(f"ns1.{website}", hc, server)
+
+    # add name server: name:ns2.hiveminds.eu, type:a,TTL: 3600, Data: IP4
+    add_glue_record(f"ns2.{website}", hc, server)
 
 
 def get_pwd(hc):
