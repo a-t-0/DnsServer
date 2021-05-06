@@ -24,6 +24,11 @@ def get_public_ip4_adressV0():
     return ip_address
 
 
+def get_public_ip4_adressV1():
+    """Returns the 127.0.0.1 IP address of the local machine in Python"""
+    return ask_question(f"Please enter your public ipv4 adress:\n")
+
+
 def get_public_ip4_adress():
     """Returns the public IP address of the local machine in Python"""
     # Import Module
