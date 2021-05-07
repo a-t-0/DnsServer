@@ -8,7 +8,11 @@ With this repo you only have to add your DNS server in the place where you regis
 ## How
 Install conda on your device, or make sure you can run python.
 ```
+sudo apt install curl
 curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
+sudo systemctl stop dns.service
+cd /etc/dns/
+sudo ./start.sh
 conda env create --file environment.yml
 conda activate technitium_dns_configuration
 python -m src
